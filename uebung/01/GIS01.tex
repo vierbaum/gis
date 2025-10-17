@@ -10,33 +10,40 @@
 \newcommand{\R}{\mathbb{R}}
 \begin{document}
 	\maketitle
-	\section*{2}
-	\begin{itemize}
+	\section{}
+	\begin{enumerate}[a)]
+	    \item
+			$D: K\times Y\rightarrow X$
+			\begin{align*}
+				(k_1,A)\mapsto a,
+				(k_1,B)\mapsto b,
+				(k_1,C)\mapsto c,\\
+				(k_2,A)\mapsto c,
+				(k_2,B)\mapsto a,
+				(k_2,C)\mapsto b,\\
+				(k_3,A)\mapsto b,
+				(k_3,B)\mapsto c,
+				(k_3,C)\mapsto a\,
+			\end{align*}
 		\item
-		    \href{https://arstechnica.com/information-technology/2017/04/10000-windows-computers-may-be-infected-by-advanced-nsa-backdoor/}
-				{WannaCry} used an exploit in windows machines that was originally found by the NSA.
-			It was originally distributed through emails.
-			Once infected a host will spread it through local networks onto other machines running windows.
+		    No determenistic D exists, because:
+			\begin{align*}
+				(k_1, A)\mapsto \{a,c\},
+				(k_2, B)\mapsto \{a,c\},
+				(k_3, C)\mapsto \{a,c\}
+			\end{align*}
 		\item
-			\href{https://www.cloudsek.com/blog/the-biggest-supply-chain-hack-of-2025-6m-records-for-sale-exfiltrated-from-oracle-cloud-affecting-over-140k-tenants#analysis}
-			    {In march over 6 million records were exfiltrated from oracle cloud.}
-			The attacker compromised a subdomain to gain acces to the ``Oracle Access Manager"
-		\item
-			\href{https://www.theguardian.com/technology/2023/dec/05/23andme-hack-data-breach}
-    			{In december 2023 the accounts of about 7 million 23andMe Users were leaked.}
-            The attacker used previously leaked email and password combinations from different sources
-            to gain acces to accounts that re-used them on 23andMe.
-    \end{itemize}
-    \section*{3}
-    Using a smartphone as an example
-    \begin{itemize}
-        \item Confidentiality\\
-            A smartphone may be secured through
-            passwords, biometrics.
-            While locked the phone can be configured to encrypt stored files
-        \item Integrity\\
-            Checksums can be used to ensure files are the same as expected
-        \item Availability\\
-            Files can be backed up
-    \end{itemize}
+    		$D: K\times Y\rightarrow X$
+    		\begin{align*}
+    			(k_1,A)\mapsto a,
+    			(k_1,B)\mapsto b,
+    			(k_1,C)\mapsto c,\\
+    			(k_2,A)\mapsto b,
+    			(k_2,B)\mapsto a,
+    			(k_2,C)\mapsto c,\\
+    			(k_3,A)\mapsto a,
+    			(k_3,B)\mapsto b,
+    			(k_3,C)\mapsto c\,
+    		\end{align*}
+    \end{enumerate}
 \end{document}
