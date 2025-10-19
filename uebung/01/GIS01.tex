@@ -54,4 +54,28 @@
     \end{tabular}
 
     x is calculated by character: $x(i)=y(i)\oplus k(i)(i\leq 72)$
+    \section{}
+    \begin{enumerate}[a)]
+        \item
+            $D:X\times K\rightarrow X$ mit
+            $(y,k)\mapsto y(l+1)y(l+2)\hdots y(2l)\oplus 1$\\
+            To show that $S=(X,K,E,D)$ is an encryption scheme,
+            we will show $D(E(x,k),k)=x$ for any
+            $(x,k)\in X\times K$
+            \begin{align*}
+                E(x,k)=(r\oplus k)||\left(x\oplus 1^l\right)
+            \end{align*}
+            Where $|r\oplus k|=l$, thus
+            \begin{equation*}
+                D(E(x,k),k)=(x\oplus 1^l)\oplus 1^l=x
+            \end{equation*}
+        \item
+            There is no need for the attacker to play the game,
+            all that is needed is the encrypted word
+            $y\in\{0,1\}^{2l}$.
+            The decryption algorithm is as follows
+            \begin{equation*}
+                D(y)=y(l)y(l+1)\hdots y(2l)\oplus 1^l
+            \end{equation*}
+    \end{enumerate}
 \end{document}
