@@ -4,6 +4,7 @@
 \usepackage{amsmath, amsfonts}
 \usepackage{enumerate}
 \usepackage{hyperref}
+\usepackage{listings}
 \input{title.tex}
 
 \newcommand{\N}{\mathbb{N}}
@@ -26,7 +27,7 @@
 				(k_3,C)\mapsto a\,
 			\end{align*}
 		\item
-		    No determenistic D exists, because:
+		    Es existiert kein deterministisches $D$, da:
 			\begin{align*}
 				(k_1, A)\mapsto \{a,c\},
 				(k_2, B)\mapsto \{a,c\},
@@ -53,49 +54,51 @@
         ASCII&H&a&l&l&o&w&e&e&n
     \end{tabular}
 
-    x is calculated by character: $x(i)=y(i)\oplus k(i)(i\leq 72)$
+    x ist pro zeichen berechnet mit: $x(i)=y(i)\oplus k(i)(i\leq 72)$
     \section{}
     \begin{enumerate}[a)]
         \item
             $D:X\times K\rightarrow X$ mit
             $(y,k)\mapsto y(l)y(l)\hdots y(2l-1)\oplus 1$\\
-            To show that $S=(X,K,E,D)$ is an encryption scheme,
-            we will show $D(E(x,k),k)=x$ for any
+            Um zu zeigen, dass $S=(X,K,E,D)$ ein verschlüsselungs Schema ist,
+            Zeigen wir $D(E(x,k),k)=x$ für beliebige
             $(x,k)\in X\times K$
             \begin{align*}
                 E(x,k)=(r\oplus k)||\left(x\oplus 1^l\right)
             \end{align*}
-            Where $|r\oplus k|=l$, thus
+            mit $|r\oplus k|=l$, somit
             \begin{equation*}
                 D(E(x,k),k)=(x\oplus 1^l)\oplus 1^l=x
             \end{equation*}
         \item
-            The attacker sends $z_0, z_1$, uses the
-            decryption algorithm, which doesn't rely on the
-            key and guesses correctly.
+            \begin{lstlisting}[mathescape=true]
+                choose $z_0$, $z_1$ from $(\{0,1\}^{128})^*$
+                    where l := $|z_0|=|z_1|$;
+                b := send($z_0$, $z_1$);
+                // decryption algorithm
+                d := b(l)b(l+1)...b(2l-1)$\oplus$ 1;
+                if d = $z_0$
+                    return 0;
+                else
+                    return 1;
+            \end{lstlisting}
     \end{enumerate}
     \section{}
-    First we send a text $x$ to encrypt where $x$ fulfills
-    all requirements for R-CTR-Vernam.
-    Let $y$ be the encrypted text and $k$ the used key,
-    $x_0,\hdots, x_n$ the blocks of $x$ of length 128
-    and $y_0,\hdots y_n$ the blocks of $y$.
+    Zunächst verschlüsseln wir einen text $x$.
+    Sei $y:=E(x,k)$.
 
-    We now send the 2 texts $z_0=x,z_1$ to be encrypted.
-    Let $b_0,\hdots,b_n$ be the blocks of $b$ of length 128.
-    and the chunks $b_0,\hdots,b_n$
+    Nun schicken wir 2 texte $z_0=x,z_1$.
+    Seien $x_0,\hdots,x_n$, $y_0,\hdots,y_{n+1}$, sowie$b_0,\hdots,b_{n+1}$
+    die Blöcke der länge 128.
 
-    Be $r=y_0$ and $r'=b_0$ the randomly generated numbers
-    for $y$ and $b$.
-    We know, the first encrypted chunk of $x$,
-    $y_1=(r+1\mod 128)\oplus k\oplus x_0$,
-    and if $b$ is $x$ encrypted, then
-    $b_1=(r'+1)\oplus k\oplus x_0$.
-    We assume
+    Wir wissen $r=y_0,r'=b_0$ sind die zufällig gewählten zahlen für $y,b$
+    der erste verschlüsselte block von $x$,
+    $y_1=(r+1\mod 128)\oplus k\oplus x_0$.
+    Wir nehmen an, dass $b=E(x,k)$, dann gilt
     \begin{align*}
         y_1\oplus b_1&=(r+1\mod 128)\oplus k\oplus x_0
         \oplus (r'+1\mod 128)\oplus k\oplus x_0\\
         &=(r+1\mod 128)\oplus (r'+1\mod 128)
     \end{align*}
-    If this is true, return 0 else 1.
+    Falls dies stimmt, return 0, andernfalls 1.
 \end{document}
