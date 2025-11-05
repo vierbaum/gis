@@ -60,4 +60,16 @@
         &=n\cdot c\cdot a+r\mod a\\
         &=x\mod a
     \end{align*}
+    \section{}
+    \begin{align*}
+        \gcd(a\mod b,b)
+        &=\underset{c}\max\{c|\underset{\alpha,\beta\in\N}\exists a\mod b=\alpha c\land b=\beta c\}\\
+        &=\underset{c}\max\{c|\underset{\alpha,\beta\in\N}\exists qb+r\mod b=\alpha c\land b=\beta c\}\\
+        &=\underset{c}\max\{c|\underset{\alpha,\beta\in\N}\exists r=\alpha c\land b=\beta c\}\\
+        &=\underset{c}\max\{c|\underset{\alpha,\beta\in\N}\exists qb+r=qb+\alpha c\land b=\beta c\}\\
+        &=\underset{c}\max\{c|\underset{\alpha,\beta\in\N}\exists a=q(\beta c)+\alpha c\land b=\beta c\}\\
+        &=\underset{c}\max\{c|\underset{\alpha,\beta\in\N}\exists a=(q\beta+\alpha)c\land b=\beta c\}\\
+        &=\underset{c}\max\{c|\underset{\alpha,\beta\in\N}\exists a=\alpha' c\land b=\beta c\}\\
+        &=\gcd(a,b)
+    \end{align*}
 \end{document}
