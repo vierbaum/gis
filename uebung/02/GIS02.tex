@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{listings}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+	\maketitle
+	\section{}
+	We know that
+	\begin{equation}
+		E(0, (a,b))=(a\cdot_n 0)+_nb=b
+    \end{equation}
+    and
+    \begin{align*}
+        E(b, (a,b))
+        &=(a\cdot_n b)+_n b\\
+        &=(a\cdot b)\mod n+_n b\\
+        &=\left[(a\cdot b)\mod n+b\right]\mod n\\
+        &=\left[(a\cdot b)+b\right]\mod n\\
+        &=\left[a\cdot (b+1)\right]\mod n
+        \tag{2}
+    \end{align*}
+    thus we create an algorithm
+    \begin{lstlisting}[mathescape=true]
+        b := send(0, 0); // (1)
+        d := E(b, (a,b));
+        for i$\in\Z_n$ { // bruteforcing a using (2)
+            if ((i * (b + 1)) mod n = d) {
+                a := i;
+                break;
+            }
+        }
+        // We now know a,b
+        choose $z_0, z_1\in\Z_n$;
+        secret := send($z_0$, $z_1$);
+        if D(secret, (a,b)) = $z_0$
+            return 0;
+        else
+            return 1;
+    \end{lstlisting}
+\end{document}
