@@ -45,4 +45,19 @@
         else
             return 1;
     \end{lstlisting}
+    \section{}
+    We know
+    \begin{equation*}
+        a|b\rightarrow b=c\cdot a
+    \end{equation*}
+    thus
+    \begin{align*}
+        (x\mod b)\mod a
+        &=(x\mod c\cdot a)\mod a\\
+        &=(n(c\cdot a)+r\mod c\cdot a)\mod a\\
+        &=r\mod a\\
+        &=q\cdot a+r\mod a&(\underset{q\in\N}\forall)\\
+        &=n\cdot c\cdot a+r\mod a\\
+        &=x\mod a
+    \end{align*}
 \end{document}
