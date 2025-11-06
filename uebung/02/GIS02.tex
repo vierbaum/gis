@@ -84,4 +84,33 @@
         1&0&5&45&20&0
     \end{tabular}\\
     $\Rightarrow 33^{-1}=45$
+    \section{}
+    We know that
+    \begin{align*}
+        \Phi(n)
+        =(p-1)(q-1)
+    \end{align*}
+    We can create a polynomial with roots
+    $p,q$
+    \begin{align*}
+        P_n
+        &=(x-p)(x-q)\\
+        &=x^2-xq-xp+pq\\
+        &=x^2-x(p+q)+pq
+    \end{align*}
+    We can calculate $p+q$
+    using
+    \begin{align*}
+        \Phi(n)
+        &=(p-1)(q-1)\\
+        &=pq-(p+q)+1\\
+        \Leftrightarrow
+        n-\Phi(n)+1&=p+q
+    \end{align*}
+    So we can calculate $p,q$ for example using the quadratic
+    formula
+    \begin{equation*}
+        p,q=\frac{(p+q)\pm\sqrt{(p+q)-4n}}{2}
+    \end{equation*}
+    Which can be done in constant time.
 \end{document}
