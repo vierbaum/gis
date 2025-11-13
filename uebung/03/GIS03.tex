@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{listings}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+    \maketitle
+    \section{}
+    \begin{enumerate}
+        \item
+            \begin{align*}
+                a|b\Rightarrow b&=qa+0\tag{1}\\
+                b|a\Rightarrow a&=q'b+0\\
+                &\overset{(1)}=q'qa\\
+                \Leftrightarrow q'q&=1\\
+                q=q'&=1 (q,q'\in\N)\\
+                \Rightarrow
+                b=1\cdot a&=a
+            \end{align*}
+        \item
+            We know $p\nmid x\Rightarrow x=q'p+r(r<p)$
+            \begin{align*}
+                p|(xy)\Rightarrow
+                qp&=xy\\
+                &=(q'p+r)y\\
+                &=q'py+ry\\
+                q&=q'y+\frac{ry}{p}\\
+                &\Rightarrow\frac{ry}{p}\in\N\\
+                &\Rightarrow\frac{y}{p}\in\N\\
+                &\Rightarrow p|y
+            \end{align*}
+    \end{enumerate}
+\end{document}
