@@ -53,4 +53,55 @@
         -1&&11
     \end{tabular}\\
     Es ist also $11=E(5,(51,11))=5^{11}\mod 51$
+    \section{}
+    \begin{enumerate}
+        \item
+            Associativity:
+            Be $x,y,z\in G\times H$.
+            $G,H$ are groups, thus
+            $\odot_G,\odot_H$ are associative.
+            For $(G\times H,\cdot)$ to be a group,
+            the following conditions must hold:
+            \begin{align*}
+                (x\cdot y)\cdot z
+                &=((x_1,x_2)\cdot(y_1,y_2))\cdot(z_1,z_2)\\
+                &=(x_1\odot_G y_1,x_2\odot_H y_2
+                \cdot(z_1,z_2)\\
+                &=((x_1\odot_G y_1)\odot_G z_1,
+                (x_2\odot_H y_2)\odot_H z_2)\\
+                &=(x_1\odot_G (y_1\odot_G z_1),
+                x_2\odot_H (y_2\odot_H z_2))\\
+                &=x\cdot (y\cdot z)
+            \end{align*}
+        \item
+            Identity element:
+            \begin{align*}
+                \underset{1\in G\times H}\exists
+                \underset{v\in G\times H}\forall
+                1\cdot v = v.
+            \end{align*}
+            With $1=(1_G, 1_H)$
+            the tuple of the identities of
+            $G,H$, we have
+            \begin{align*}
+                1\cdot v&=(1_G\odot_G v_1, 1_H\odot_H v_2)\\
+                &=(v_1, v_2)=v
+            \end{align*}
+        \item
+            Inverse element:
+            \begin{align*}
+                \underset{v\in G\times H}\forall
+                \underset{v^{-1}\in G\times H}\exists
+                v^{-1}\cdot v = v.
+            \end{align*}
+            With $v^{-1}=(v_1^{-1}, v_2^{-1})$
+            the tuple of the inverses of v in
+            $G,H$, we have
+            \begin{align*}
+                v^{-1}\cdot v&=
+                (v_1^{-1}\odot_G v_1, v_2^{-1}\odot_H v_2)\\
+                &=(1, 1)=1
+            \end{align*}
+    \end{enumerate}
+    Thus $(G\times H,\cdot)$ is a group.
 \end{document}
