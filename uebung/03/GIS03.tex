@@ -165,4 +165,26 @@
             \end{align*}
             We have $x_3'=18=10+8=x_2+x_1=x_3$
     \end{enumerate}
+    \section{}
+    \begin{align*}
+        (E^{r_1}(x_1, N))^c\mod N^2
+        &=\underbrace
+        {E^{r_1}(x_1, N)\cdot\hdots\cdot E^{r_1}(x_1, N)}
+        _{c\text{ times}}\mod N^2\\
+        &=E^{r_1^2\mod N}(2x_1\mod N, N)\cdot
+        \underbrace{
+            E^{r_1}(x_1, N)
+            \cdot\hdots\cdot E^{r_1}(x_1, N)
+        }
+        _{c-2\text{ times}}\mod N^2\\
+        &=E^{r_1^3\mod N}(3x_1\mod N, N)\cdot
+        \underbrace{
+            E^{r_1}(x_1, N)
+            \cdot\hdots\cdot E^{r_1}(x_1, N)
+        }
+        _{c-3\text{ times}}\mod N^2\\
+        \vdots\\
+        &=E^{r_1^c\mod N}(cx_1\mod N, N)\mod N^2
+    \end{align*}
+    So we have $r_2=r_1^c\mod N$
 \end{document}
