@@ -104,4 +104,65 @@
             \end{align*}
     \end{enumerate}
     Thus $(G\times H,\cdot)$ is a group.
+    \section{}
+    \begin{enumerate}
+        \item
+            We have $35=5\cdot 7$, thus
+            \begin{equation*}
+           	    \Phi(N)=\Phi(35)=(5-1)5^0\cdot(7-1)7^0
+                =24
+            \end{equation*}
+        \item
+            We know
+            $\Phi^-1(N)=24^-1=19((19\cdot 24)\mod 35=1)$
+            thus
+            \begin{align*}
+                D(y_1,\Phi(N)=D(1031,24)
+                &=\left[
+                    \frac{\left(1031^{24}\mod 35^2\right)-1}{35}
+                    \cdot 19
+                \right]\mod 35\\
+                &=\left[
+                    \frac{596-1}{35}
+                    \cdot 19
+                \right]\mod 35\\
+                &=\left[
+                    17\cdot 19
+                \right]\mod 35\\
+                &=8=x_1
+            \end{align*}
+            \begin{align*}
+                D(y_2,\Phi(N)=D(776,24)
+                &=\left[
+                    \frac{\left(776^{24}\mod 35^2\right)-1}{35}
+                    \cdot 19
+                \right]\mod 35\\
+                &=\left[
+                    \frac{1051-1}{35}
+                    \cdot 19
+                \right]\mod 35\\
+                &=\left[
+                    30\cdot 19
+                \right]\mod 35\\
+                &=10=x_2
+            \end{align*}
+        \item
+            $y_3=1031\cdot776\mod 35^2=131$
+            \begin{align*}
+                D(y_3,\Phi(N)=D(131,24)
+                &=\left[
+                    \frac{\left(131^{24}\mod 35^2\right)-1}{35}
+                    \cdot 19
+                \right]\mod 35\\
+                &=\left[
+                    \frac{421-1}{35}
+                    \cdot 19
+                \right]\mod 35\\
+                &=\left[
+                    12\cdot 19
+                \right]\mod 35\\
+                &=18=x_3'
+            \end{align*}
+            We have $x_3'=18=10+8=x_2+x_1=x_3$
+    \end{enumerate}
 \end{document}
