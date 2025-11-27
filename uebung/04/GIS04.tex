@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{listings}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+    \maketitle
+    \section{}
+    \begin{enumerate}[(a)]
+        \item
+            Using $l=2$ we have $x=100000\neq x'=001000, x,x'\in\{0,1\}^l$ and\\
+            $h(x')=1-0+0-0+0-0=1=1-0+0-0+0-0=h(x)$.
+            Thus $h$ is not a collision resistant hash function.
+        \item
+            be $x,y\in\{0,1\}^{L-1}$ and $x\neq y$.\\
+            $H(x||x)=h(x)\oplus h(x)=0=h(y)\oplus h(y)=H(y||y)$.
+            Thus $H$ is not a collision resistant hash function.
+    \end{enumerate}
+\end{document}
