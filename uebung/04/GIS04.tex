@@ -50,4 +50,30 @@
             \end{equation*}
             thus $h$ is not preimage resistant.
     \end{enumerate}
+    \section{}
+    We assume $h$ is collision resistant but $h'$ is not.
+    We know, there exist $x,x'\in\{0,1\}^*$ and $x\neq x'$
+    with $h'(x)=h(x)$. let $\hat{h}:=h'(x)$ and $\hat{h}':=h'(x)$
+    with $|\hat{h}|=l+1=|\hat{h}'|$
+    \begin{align*}
+        h'(x)&=h'(x')\\
+        \hat{h}_0
+        \hat{h}_1
+        \hdots
+        \hat{h}_l
+        &=
+        \hat{h}'_0
+        \hat{h}'_1
+        \hdots
+        \hat{h}'_l\\
+        \hat{h}_1
+        \hdots
+        \hat{h}_l
+        &=
+        \hat{h}'_1
+        \hdots
+        \hat{h}'_l\\
+        h(x)&=h(x')
+    \end{align*}
+    which contradicts our assumption, thus $h'$ is collision resistant
 \end{document}
