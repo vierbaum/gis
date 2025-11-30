@@ -76,4 +76,18 @@
         h(x)&=h(x')
     \end{align*}
     which contradicts our assumption, thus $h'$ is collision resistant
+    \section{}
+    We know that $E_{\text{Vernam}}(x,k)=x\oplus k$.
+    Therefore $E_{\text{Vernam}}(0^l,k)=0^l\oplus k=k$.
+    We create the following algorithm
+    \begin{lstlisting}[mathescape=true];
+        k := send($0^l$)
+        choose $x\in\{0,1\}^l$ randomly;
+        // $E_{\text{Vernam}}(x,k)=T(x,k)$
+        t := x xor k;
+
+        V(x, t, k) = Valid $\blacksquare$
+    \end{lstlisting}
+    The Attacker wins with advantage 1, therefore $M_\text{Vernam}$ is
+    insecure.
 \end{document}
