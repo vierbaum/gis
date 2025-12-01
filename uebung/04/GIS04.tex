@@ -90,4 +90,19 @@
     \end{lstlisting}
     The Attacker wins with advantage 1, therefore $M_\text{Vernam}$ is
     insecure.
+    \section{}
+    \begin{lstlisting}[mathescape=true]
+        // n blocks
+        choose $x\in\{0,1\}^{n\cdot l}$
+
+        $y_0$ := send($x_0$)
+        for i=1..n-1 {
+            // Using $x\oplus x \oplus y = y$ we call
+            // $E(v\oplus v\oplus y_{i-1}\oplus x_i, k)=E(y_{i-1}\oplus x_i, k)$
+            // Which is CBC-MAC for block i
+            $y_i$ := send($v\oplus y_{i-1}\oplus x_i$)
+        }
+
+        V$(x, y_{n-1}, k)=$valid
+    \end{lstlisting}
 \end{document}
